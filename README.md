@@ -39,8 +39,9 @@ Copy the .env.example file and update your environment variables:
 
 ```bash
 cp .env.example .env
-Update these lines in your .env file:
 ```
+
+Update these lines in your .env file:
 
 ```env
 DB_DATABASE=your_database_name
