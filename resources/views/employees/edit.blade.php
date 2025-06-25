@@ -60,6 +60,9 @@
                     ]"
                     :selected="old('gender', $employee->gender)"
                 />
+                @error('gender')
+                    <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+                @enderror
             </div>
 
             {{-- Birthday --}}
@@ -67,6 +70,9 @@
                 <x-input-label for="birthday" :value="__('Birthday')" />
                 <x-text-input id="birthday" name="birthday" type="date" class="mt-1 block w-full"
                     :value="old('birthday', $employee->birthday)" />
+                @error('birthday')
+                    <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+                @enderror
             </div>
 
             {{-- Monthly Salary --}}
@@ -75,6 +81,9 @@
                 <x-text-input id="monthly_salary" name="monthly_salary" type="number" step="0.01"
                     class="mt-1 block w-full"
                     :value="old('monthly_salary', $employee->monthly_salary)" />
+                @error('monthly_salary')
+                    <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+                @enderror
             </div>
 
             <div class="flex justify-between gap-4">
