@@ -19,12 +19,28 @@
             {{-- First Name --}}
             <div>
                 <x-input-label for="first_name" :value="__('First Name')" />
-                <x-text-input id="first_name" name="first_name" class="mt-1 block w-full" />
+                <x-text-input 
+                    id="first_name" 
+                    name="first_name" 
+                    class="mt-1 block w-full" 
+                    required
+                    onblur="this.value = this.value.toLowerCase().replace(/\b\w/g, c => c.toUpperCase())"/>
+                @error('first_name')
+                    <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+                @enderror
             </div>
             {{-- Last Name --}}
             <div>
                 <x-input-label for="last_name" :value="__('Last Name')" />
-                <x-text-input id="last_name" name="last_name" class="mt-1 block w-full" />
+                <x-text-input 
+                    id="last_name" 
+                    name="last_name" 
+                    class="mt-1 block w-full" 
+                    required
+                    onblur="this.value = this.value.toLowerCase().replace(/\b\w/g, c => c.toUpperCase())"/>
+                @error('last_name')
+                    <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+                @enderror
             </div>
             {{-- gender selector --}}
             <div>
@@ -37,11 +53,17 @@
                         'Others' => 'Others',
                     ]"
                 />
+                @error('gender')
+                    <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+                @enderror
             </div>
             {{-- birthday --}}
             <div>
                 <x-input-label for="birthday" :value="__('Birthday')" />
                 <x-text-input id="birthday" name="birthday" type="date" class="mt-1 block w-full" />
+                @error('birthday')
+                    <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+                @enderror
             </div>
             {{-- monthly salary --}}
             <div>
@@ -52,8 +74,12 @@
                     type="number"
                     step="0.01"
                     class="mt-1 block w-full"
+                    required
                     :value="old('monthly_salary')"
                 />
+                @error('monthly_salary')
+                    <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+                @enderror
             </div>
             <div class="flex items-center gap-4">
                 <x-primary-button>{{ __('Save') }}</x-primary-button>
