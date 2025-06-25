@@ -40,8 +40,8 @@ class EmployeeController extends Controller
     {   
         // Validate inputs
         $validated_data = $request->validate([
-            'first_name'        => ['required', 'string', 'max:255'],
-            'last_name'         => ['required', 'string', 'max:255'],
+            'first_name'        => ['required', 'string', 'max:255', 'regex:/^[A-Za-z\s\-]+$/'],
+            'last_name'         => ['required', 'string', 'max:255', 'regex:/^[A-Za-z\s\-]+$/'],
             'gender'            => ['required', 'in:Male,Female,Others'],
             'birthday'          => ['required','date'],
             'monthly_salary'    => ['required', 'numeric', 'min:0'],
