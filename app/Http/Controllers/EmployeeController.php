@@ -15,15 +15,9 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $maleCount = Employee::where('gender', 'Male')->count();
-        $femaleCount = Employee::where('gender', 'Female')->count();
-
-        $averageAge = Employee::selectRaw('AVG(TIMESTAMPDIFF(YEAR, birthday, CURDATE())) as avg_age')->value('avg_age');
-        $totalSalary = Employee::sum('monthly_salary');
-
         $employees = Employee::get();
 
-        return view('employees.index', compact('maleCount', 'femaleCount', 'averageAge', 'totalSalary', 'employees'));
+        return view('employees.index', compact('employees'));
     }
 
     /**

@@ -1,14 +1,6 @@
 @extends('partials.page-wrapper', ['title' => 'Employees'])
 
 @section('content')
-    {{-- Employee Summary --}}
-    <div>
-        <h1>Employee Summary</h1>
-        <p>Male Employees: {{ $maleCount }}</p>
-        <p>Female Employees: {{ $femaleCount }}</p>
-        <p>Average Age: {{ number_format($averageAge, 2) }} years</p>
-        <p>Total Monthly Salary: ₱{{ number_format($totalSalary, 2) }}</p>
-    </div>
     {{-- New Employee Button --}}
     <div class="flex justify-end mb-4">
         <a href="{{ route('employees.create') }}"
