@@ -21,15 +21,15 @@ A simple Laravel 9 + MySQL web application with login authentication, employee C
 Before running this project, make sure you have the following installed on your machine:
 
 -   PHP (version 8.0 or higher recommended)
-    (Download PHP)[https://www.php.net/downloads.php]
+       [Download PHP](https://www.php.net/downloads.php)
 
 -   Composer (dependency manager for PHP)
-    (Download Composer)[https://getcomposer.org/]
+       [Download Composer](https://getcomposer.org/)
 
 -   MySQL (any version supported by Laravel)
 
     -   You can use XAMPP (includes MySQL and PHP)
-        (Download XAMPP)[https://www.apachefriends.org/download.html]
+        [Download XAMPP](https://www.apachefriends.org/download.html)
 
     -   Or any other MySQL service (e.g., MAMP, Laragon, Docker, etc.)
 
