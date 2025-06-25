@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Employee extends Model
 {
@@ -26,6 +27,11 @@ class Employee extends Model
     public function setLastNameAttribute($value)
     {
         $this->attributes['last_name'] = ucwords(strtolower($value));
+    }
+
+    public function getAgeAttribute()
+    {
+        return Carbon::parse($this->birthday)->age;
     }
 
     // return fullname
