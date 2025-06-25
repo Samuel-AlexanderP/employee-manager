@@ -27,7 +27,7 @@ cd employee-management
 
 ### 2. Install Dependencies
 
-```
+```bash
 composer install
 npm install
 npm run build
@@ -37,12 +37,12 @@ npm run build
 
 Copy the .env.example file and update your environment variables:
 
-```
+```bash
 cp .env.example .env
 Update these lines in your .env file:
+```
 
-env
-
+```env
 DB_DATABASE=your_database_name
 DB_USERNAME=your_mysql_user
 DB_PASSWORD=your_mysql_password
